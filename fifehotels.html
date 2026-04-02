@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fife Hotels – Luxury & Affordable Stays in Scotland</title>
+  <meta name="description" content="Discover the best hotels in Fife, Scotland. From luxury castle stays in St Andrews to affordable B&Bs in Dunfermline and Kirkcaldy. Book directly or via Booking.com." />
+  <meta name="keywords" content="hotels fife scotland, st andrews hotel, dunfermline hotel, kirkcaldy hotel, boutique hotels fife, fife coastal path accommodation" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://fifehotels.com" />
+  <meta property="og:title" content="Fife Hotels – Best Stays in Scotland" />
+  <meta property="og:description" content="Luxury castles to budget B&Bs. Find your perfect stay in Fife, Scotland." />
+  <meta property="og:url" content="https://fifehotels.com" />
+  <meta property="og:type" content="website" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Fife Hotels",
+    "url": "https://fifehotels.com",
+    "description": "Hotel booking directory for Fife, Scotland",
+    "areaServed": ["St Andrews", "Dunfermline", "Kirkcaldy", "Cupar", "Leven", "Fife"],
+    "sameAs": ["https://www.booking.com"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream: #f7f3ee;
+      --dark: #1a1612;
+      --brown: #2e2419;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --gold-dim: #9a7a32;
+      --stone: #8a7968;
+      --stone-light: #d4ccc0;
+      --white: #ffffff;
+      --radius: 6px;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Outfit', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--dark);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      background: rgba(247,243,238,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--stone-light);
+      transition: padding 0.3s;
+    }
+
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--dark);
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--dark);
+      color: var(--cream);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--dark); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 48px 80px;
+      position: relative;
+      overflow: hidden;
+      background: var(--dark);
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(26,22,18,0.3) 0%, rgba(26,22,18,0.7) 100%),
+        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600') center/cover no-repeat;
+    }
+
+    .hero-tag {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 24px;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 32px; height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3.5rem, 8vw, 7.5rem);
+      font-weight: 300;
+      line-height: 0.95;
+      color: var(--cream);
+      position: relative;
+      margin-bottom: 28px;
+      letter-spacing: -0.01em;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: rgba(247,243,238,0.65);
+      max-width: 420px;
+      font-weight: 300;
+      position: relative;
+      margin-bottom: 52px;
+      line-height: 1.75;
+    }
+
+    /* ── SEARCH BOX ── */
+    .search-box {
+      position: relative;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 28px 32px;
+      max-width: 900px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    }
+
+    .search-box-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 18px;
+    }
+
+    .search-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr auto;
+      gap: 0;
+      border: 1px solid var(--stone-light);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .search-field {
+      padding: 14px 18px;
+      border-right: 1px solid var(--stone-light);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      position: relative;
+    }
+    .search-field:last-of-type { border-right: none; }
+
+    .search-field label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+
+    .search-field input,
+    .search-field select {
+      border: none;
+      outline: none;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--dark);
+      background: transparent;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    /* guests popup trigger */
+    .guests-display {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--dark);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .guests-popup {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      background: var(--white);
+      border: 1px solid var(--stone-light);
+      border-radius: 10px;
+      padding: 20px;
+      width: 260px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+      z-index: 50;
+    }
+    .guests-popup.open { display: block; }
+
+    .guest-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--stone-light);
+    }
+    .guest-row:last-child { border-bottom: none; }
+
+    .guest-info strong { font-size: 0.9rem; display: block; }
+    .guest-info span { font-size: 0.75rem; color: var(--stone); }
+
+    .guest-counter {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .guest-btn {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--stone-light);
+      background: none;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      color: var(--dark);
+    }
+    .guest-btn:hover { background: var(--dark); color: var(--white); border-color: var(--dark); }
+    .guest-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+    .guest-count { font-weight: 600; font-size: 0.95rem; min-width: 16px; text-align: center; }
+
+    .search-submit {
+      background: var(--gold);
+      border: none;
+      padding: 0 28px;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--dark);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .search-submit:hover { background: var(--gold-light); }
+
+    /* ── SECTION COMMONS ── */
+    .section-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      width: 24px; height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--dark);
+    }
+    .section-title em { font-style: italic; color: var(--gold-dim); }
+
+    /* ── FILTERS ── */
+    .hotels-section {
+      padding: 100px 48px;
+    }
+
+    .hotels-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-pill {
+      background: none;
+      border: 1px solid var(--stone-light);
+      color: var(--stone);
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 8px 18px;
+      border-radius: 100px;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+    }
+    .filter-pill:hover { border-color: var(--gold); color: var(--gold); }
+    .filter-pill.active {
+      background: var(--dark);
+      border-color: var(--dark);
+      color: var(--cream);
+    }
+
+    /* ── HOTEL CARDS ── */
+    .hotels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 28px;
+    }
+
+    .hotel-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--stone-light);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .hotel-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(26,22,18,0.12);
+    }
+
+    .hotel-img-wrap {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+    .hotel-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .hotel-card:hover .hotel-img-wrap img { transform: scale(1.05); }
+
+    .hotel-badge {
+      position: absolute;
+      top: 14px; left: 14px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+    }
+    .hotel-badge.luxury { background: rgba(26,22,18,0.85); color: var(--gold-light); }
+    .hotel-badge.affordable { background: rgba(255,255,255,0.92); color: #2d7a4f; }
+    .hotel-badge.direct { background: rgba(201,168,76,0.9); color: var(--dark); }
+
+    .hotel-rating {
+      position: absolute;
+      top: 14px; right: 14px;
+      background: rgba(255,255,255,0.95);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .star { color: var(--gold); }
+
+    .hotel-body { padding: 22px 24px 24px; }
+
+    .hotel-location-tag {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 6px;
+    }
+
+    .hotel-name {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .hotel-desc {
+      font-size: 0.85rem;
+      color: var(--stone);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .hotel-amenities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    .amenity {
+      font-size: 0.72rem;
+      padding: 3px 10px;
+      background: var(--cream);
+      border-radius: 100px;
+      color: var(--stone);
+    }
+
+    .hotel-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--stone-light);
+      padding-top: 16px;
+    }
+
+    .hotel-price {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1;
+    }
+    .hotel-price-night {
+      font-size: 0.75rem;
+      color: var(--stone);
+      font-family: var(--font-sans);
+      font-weight: 400;
+    }
+
+    .hotel-book-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--dark);
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .hotel-book-btn:hover { background: var(--gold); color: var(--dark); }
+    .hotel-book-btn.direct-btn { background: var(--gold); color: var(--dark); }
+    .hotel-book-btn.direct-btn:hover { background: var(--gold-dim); color: var(--white); }
+
+    /* ── DIRECT BOOKING MODAL ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(26,22,18,0.7);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 40px;
+      max-width: 520px;
+      width: 100%;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: var(--cream);
+      border: none;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--stone);
+      transition: background 0.2s;
+    }
+    .modal-close:hover { background: var(--stone-light); }
+
+    .modal-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      margin-bottom: 6px;
+    }
+    .modal-sub { font-size: 0.85rem; color: var(--stone); margin-bottom: 28px; }
+
+    .modal-form { display: flex; flex-direction: column; gap: 14px; }
+
+    .modal-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .modal-field { display: flex; flex-direction: column; gap: 6px; }
+    .modal-field label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+    .modal-field input, .modal-field select, .modal-field textarea {
+      border: 1px solid var(--stone-light);
+      border-radius: var(--radius);
+      padding: 11px 14px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--dark);
+      background: var(--cream);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .modal-field input:focus, .modal-field select:focus, .modal-field textarea:focus {
+      border-color: var(--gold);
+    }
+    .modal-field textarea { resize: vertical; min-height: 80px; }
+
+    .modal-commission {
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      font-size: 0.82rem;
+      color: var(--stone);
+    }
+    .modal-commission strong { color: var(--gold-dim); }
+
+    .modal-submit {
+      background: var(--gold);
+      color: var(--dark);
+      border: none;
+      padding: 14px;
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .modal-submit:hover { background: var(--gold-light); }
+
+    .modal-success { display: none; text-align: center; padding: 20px 0; }
+    .modal-success.show { display: block; }
+    .modal-success .check { font-size: 3rem; margin-bottom: 12px; }
+    .modal-success h3 { font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 8px; }
+    .modal-success p { color: var(--stone); font-size: 0.9rem; }
+
+    /* ── WHY FIFE ── */
+    .why {
+      padding: 100px 48px;
+      background: var(--dark);
+      color: var(--cream);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-top: 60px;
+      align-items: start;
+    }
+
+    .why-points { display: flex; flex-direction: column; gap: 0; }
+
+    .why-point {
+      display: flex;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(247,243,238,0.1);
+    }
+    .why-point:first-child { border-top: 1px solid rgba(247,243,238,0.1); }
+
+    .why-num {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-style: italic;
+      color: rgba(201,168,76,0.3);
+      line-height: 1;
+      min-width: 40px;
+    }
+
+    .why-text h3 { font-weight: 500; font-size: 1rem; margin-bottom: 6px; color: var(--cream); }
+    .why-text p { font-size: 0.85rem; color: rgba(247,243,238,0.5); line-height: 1.7; }
+
+    .why-image {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 480px;
+    }
+    .why-image img { width: 100%; height: 100%; object-fit: cover; }
+    .why-image-caption {
+      position: absolute;
+      bottom: 24px; left: 24px; right: 24px;
+      background: rgba(26,22,18,0.8);
+      backdrop-filter: blur(8px);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      color: rgba(247,243,238,0.8);
+    }
+    .why-image-caption strong { color: var(--gold-light); display: block; font-size: 1rem; margin-bottom: 2px; }
+
+    /* ── AREAS ── */
+    .areas {
+      padding: 100px 48px;
+      background: var(--cream);
+    }
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .area-card {
+      background: var(--white);
+      border: 1px solid var(--stone-light);
+      border-radius: 10px;
+      padding: 24px 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .area-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+    .area-card.active { background: var(--dark); border-color: var(--dark); color: var(--cream); }
+
+    .area-name {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .area-count { font-size: 0.75rem; color: var(--stone); }
+    .area-card.active .area-count { color: rgba(247,243,238,0.5); }
+
+    /* ── MAP ── */
+    .map-section {
+      padding: 0 48px 80px;
+    }
+    .map-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--stone-light);
+      height: 400px;
+    }
+    .map-wrap iframe { width: 100%; height: 100%; border: none; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--brown);
+      color: rgba(247,243,238,0.7);
+      padding: 60px 48px 32px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .footer-brand span { color: var(--gold); }
+
+    .footer-desc { font-size: 0.85rem; line-height: 1.7; }
+
+    .footer-col h4 {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a {
+      font-size: 0.85rem;
+      color: rgba(247,243,238,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(247,243,238,0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 0 20px 60px; }
+      .search-fields { grid-template-columns: 1fr 1fr; }
+      .search-submit { grid-column: span 2; padding: 14px; }
+      .hotels-section, .why, .areas, .map-section { padding: 60px 20px; }
+      .map-section { padding: 0 20px 60px; }
+      .why-grid { grid-template-columns: 1fr; gap: 40px; }
+      .why-image { height: 280px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+      footer { padding: 40px 20px 24px; }
+      .modal { padding: 28px 20px; }
+      .modal-row { grid-template-columns: 1fr; }
+    }
+
+    /* ── FADE IN ── */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
+    .fade-in.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">Fife <span>Hotels</span></div>
+  <ul class="nav-links">
+    <li><a href="#hotels">Properties</a></li>
+    <li><a href="#areas">Areas</a></li>
+    <li><a href="#why">About</a></li>
+    <li><a href="#map">Map</a></li>
+  </ul>
+  <a href="#hotels" class="nav-cta">Browse Hotels</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-img"></div>
+
+  <div class="hero-tag" style="position:relative;">Scotland's Kingdom of Fife</div>
+
+  <h1 class="hero-title" style="position:relative;">
+    Where Every<br />Stay Becomes<br /><em>a Story</em>
+  </h1>
+
+  <p class="hero-sub" style="position:relative;">
+    From medieval castle hotels in St Andrews to cosy coastal retreats along the Fife Pilgrim Way — find your perfect stay.
+  </p>
+
+  <!-- SEARCH BOX -->
+  <div class="search-box" style="position:relative;">
+    <div class="search-box-label">Find your stay in Fife</div>
+    <div class="search-fields">
+      <div class="search-field">
+        <label>Check-in</label>
+        <input type="date" id="checkIn" />
+      </div>
+      <div class="search-field">
+        <label>Check-out</label>
+        <input type="date" id="checkOut" />
+      </div>
+      <div class="search-field" style="position:relative;" id="guestsField">
+        <label>Guests & Rooms</label>
+        <div class="guests-display" id="guestsDisplay" onclick="toggleGuestsPopup()">2 adults · 1 room</div>
+        <div class="guests-popup" id="guestsPopup">
+          <div class="guest-row">
+            <div class="guest-info">
+              <strong>Adults</strong>
+              <span>Ages 18+</span>
+            </div>
+            <div class="guest-counter">
+              <button class="guest-btn" onclick="changeGuest('adults',-1)" id="adultsDown">−</button>
+              <span class="guest-count" id="adultsCount">2</span>
+              <button class="guest-btn" onclick="changeGuest('adults',1)">+</button>
+            </div>
+          </div>
+          <div class="guest-row">
+            <div class="guest-info">
+              <strong>Children</strong>
+              <span>Ages 0–17</span>
+            </div>
+            <div class="guest-counter">
+              <button class="guest-btn" onclick="changeGuest('children',-1)" id="childrenDown">−</button>
+              <span class="guest-count" id="childrenCount">0</span>
+              <button class="guest-btn" onclick="changeGuest('children',1)">+</button>
+            </div>
+          </div>
+          <div class="guest-row">
+            <div class="guest-info">
+              <strong>Rooms</strong>
+            </div>
+            <div class="guest-counter">
+              <button class="guest-btn" onclick="changeGuest('rooms',-1)" id="roomsDown">−</button>
+              <span class="guest-count" id="roomsCount">1</span>
+              <button class="guest-btn" onclick="changeGuest('rooms',1)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="search-field">
+        <label>Area</label>
+        <select id="areaSelect">
+          <option value="">All Fife</option>
+          <option>St Andrews</option>
+          <option>Dunfermline</option>
+          <option>Kirkcaldy</option>
+          <option>Cupar</option>
+          <option>Leven</option>
+          <option>Anstruther</option>
+        </select>
+      </div>
+      <button class="search-submit" onclick="handleSearch()">Search →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOTELS ── -->
+<section class="hotels-section" id="hotels">
+  <div class="hotels-header">
+    <div>
+      <div class="section-eyebrow fade-in">Featured Properties</div>
+      <h2 class="section-title fade-in">Handpicked stays<br />across <em>Fife</em></h2>
+    </div>
+    <div class="filter-row">
+      <button class="filter-pill active" onclick="filterHotels('all', this)">All</button>
+      <button class="filter-pill" onclick="filterHotels('luxury', this)">Luxury</button>
+      <button class="filter-pill" onclick="filterHotels('affordable', this)">Affordable</button>
+      <button class="filter-pill" onclick="filterHotels('direct', this)">Direct Book</button>
+    </div>
+  </div>
+  <div class="hotels-grid" id="hotelsGrid"></div>
+</section>
+
+<!-- ── WHY ── -->
+<section class="why" id="why">
+  <div class="section-eyebrow" style="color:var(--gold);">Why Fife Hotels</div>
+  <h2 class="section-title fade-in" style="color:var(--cream);">Your trusted guide<br />to <em>Scotland's East</em></h2>
+
+  <div class="why-grid">
+    <div class="why-points">
+      <div class="why-point fade-in">
+        <div class="why-num">1</div>
+        <div class="why-text">
+          <h3>Booking.com Affiliate Partner</h3>
+          <p>All Booking.com properties carry their price guarantee and free cancellation policy. You get the same price as booking directly on their site.</p>
+        </div>
+      </div>
+      <div class="why-point fade-in">
+        <div class="why-num">2</div>
+        <div class="why-text">
+          <h3>Exclusive Direct Deals</h3>
+          <p>Several independent hotels and B&Bs list exclusively with us. No Booking.com fees, often better prices, direct contact with the owner.</p>
+        </div>
+      </div>
+      <div class="why-point fade-in">
+        <div class="why-num">3</div>
+        <div class="why-text">
+          <h3>Local Knowledge</h3>
+          <p>Fife-specific tips: the best spots on the Coastal Path, when to visit St Andrews without the golf crowds, hidden village gems.</p>
+        </div>
+      </div>
+      <div class="why-point fade-in">
+        <div class="why-num">4</div>
+        <div class="why-text">
+          <h3>All Budgets Welcome</h3>
+          <p>From £60/night B&Bs to £300/night castle suites — we cover the full range without bias.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-image fade-in">
+      <img src="https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=800" alt="Fife coastline Scotland" />
+      <div class="why-image-caption">
+        <strong>The Fife Coastal Path</strong>
+        117 miles of breathtaking Scottish coastline — right on your doorstep.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AREAS ── -->
+<section class="areas" id="areas">
+  <div class="section-eyebrow fade-in">Browse by Area</div>
+  <h2 class="section-title fade-in">Fife's best<br /><em>destinations</em></h2>
+
+  <div class="areas-grid">
+    <div class="area-card" onclick="filterByArea('St Andrews')">
+      <div class="area-name">St Andrews</div>
+      <div class="area-count">Golf, Cathedral & Coast</div>
+    </div>
+    <div class="area-card" onclick="filterByArea('Dunfermline')">
+      <div class="area-name">Dunfermline</div>
+      <div class="area-count">Historic Capital</div>
+    </div>
+    <div class="area-card" onclick="filterByArea('Kirkcaldy')">
+      <div class="area-name">Kirkcaldy</div>
+      <div class="area-count">Lang Toun</div>
+    </div>
+    <div class="area-card" onclick="filterByArea('Anstruther')">
+      <div class="area-name">Anstruther</div>
+      <div class="area-count">East Neuk Villages</div>
+    </div>
+    <div class="area-card" onclick="filterByArea('Cupar')">
+      <div class="area-name">Cupar</div>
+      <div class="area-count">Countryside Hub</div>
+    </div>
+    <div class="area-card" onclick="filterByArea('Leven')">
+      <div class="area-name">Leven</div>
+      <div class="area-count">Coastal Lowlands</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MAP ── -->
+<div class="map-section" id="map">
+  <div class="section-eyebrow" style="padding:0 0 14px;">Location</div>
+  <div class="map-wrap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d175594.3!2d-3.1!3d56.25!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887d5d7c3e1f4d3%3A0x12c4a6f7e8b9d2c1!2sFife%2C%20Scotland!5e0!3m2!1sen!2suk!4v1711600000001!5m2!1sen!2suk"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Fife Scotland – Hotel Locations">
+    </iframe>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">Fife <span>Hotels</span></div>
+      <p class="footer-desc">Scotland's dedicated hotel directory for Fife. Booking.com affiliate partner + exclusive direct deals with independent properties.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Properties</h4>
+      <ul>
+        <li><a href="#hotels">All Hotels</a></li>
+        <li><a href="#hotels">Luxury Stays</a></li>
+        <li><a href="#hotels">Affordable</a></li>
+        <li><a href="#hotels">Direct Book</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Areas</h4>
+      <ul>
+        <li><a href="#areas">St Andrews</a></li>
+        <li><a href="#areas">Dunfermline</a></li>
+        <li><a href="#areas">Kirkcaldy</a></li>
+        <li><a href="#areas">East Neuk</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info@fifehotels.com">info@fifehotels.com</a></li>
+        <li><a href="#">List your property</a></li>
+        <li><a href="#">Booking.com affiliate</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 fifehotels.com · All rights reserved</span>
+    <span>Booking.com Affiliate Partner · Independent hotel listings</span>
+  </div>
+</footer>
+
+<!-- ── DIRECT BOOKING MODAL ── -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent">
+      <div class="modal-eyebrow">Direct Booking</div>
+      <h2 class="modal-title" id="modalHotelName">Hotel Name</h2>
+      <p class="modal-sub" id="modalHotelSub">Send your enquiry directly to the property</p>
+
+      <div class="modal-form" id="modalForm">
+        <div class="modal-row">
+          <div class="modal-field">
+            <label>Full Name</label>
+            <input type="text" id="mName" placeholder="John Smith" required />
+          </div>
+          <div class="modal-field">
+            <label>Email</label>
+            <input type="email" id="mEmail" placeholder="john@email.com" required />
+          </div>
+        </div>
+        <div class="modal-row">
+          <div class="modal-field">
+            <label>Check-in</label>
+            <input type="date" id="mCheckIn" required />
+          </div>
+          <div class="modal-field">
+            <label>Check-out</label>
+            <input type="date" id="mCheckOut" required />
+          </div>
+        </div>
+        <div class="modal-row">
+          <div class="modal-field">
+            <label>Adults</label>
+            <select id="mAdults">
+              <option>1</option><option selected>2</option><option>3</option><option>4</option>
+            </select>
+          </div>
+          <div class="modal-field">
+            <label>Children</label>
+            <select id="mChildren">
+              <option selected>0</option><option>1</option><option>2</option><option>3</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-field">
+          <label>Rooms</label>
+          <select id="mRooms">
+            <option selected>1</option><option>2</option><option>3</option>
+          </select>
+        </div>
+        <div class="modal-field">
+          <label>Special Requests (optional)</label>
+          <textarea id="mMessage" placeholder="Any preferences or questions..."></textarea>
+        </div>
+        <div class="modal-commission">
+          🏡 This is a <strong>direct booking</strong>. A small service fee may apply upon confirmed stay. No upfront payment required — the hotel will contact you to confirm.
+        </div>
+        <button class="modal-submit" onclick="submitDirectBooking()">Send Enquiry →</button>
+      </div>
+
+      <div class="modal-success" id="modalSuccess">
+        <div class="check">✅</div>
+        <h3>Enquiry Sent!</h3>
+        <p>The property will contact you within 24 hours to confirm availability and rates.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── HOTEL DATA ──
+  // type: 'booking' = Booking.com affiliate | 'direct' = your own commission deal
+  const hotels = [
+    {
+      id: 1,
+      name: "The Fife Arms Castle Hotel",
+      type: "luxury",
+      source: "booking",
+      price: 195,
+      rating: 4.8,
+      reviews: 312,
+      image: "https://images.unsplash.com/photo-1566073771259-6a85f65d16d6?w=800",
+      location: "St Andrews",
+      amenities: ["Spa", "Fine Dining", "Pool", "Concierge", "WiFi"],
+      description: "A baronial castle turned luxury hotel with sea views and award-winning cuisine. Golf packages available.",
+      bookingUrl: "https://www.booking.com/searchresults.html?ss=St+Andrews+Fife&aid=YOUR_AFFILIATE_ID"
+    },
+    {
+      id: 2,
+      name: "The Dunfermline Town Inn",
+      type: "affordable",
+      source: "direct",
+      price: 78,
+      rating: 4.4,
+      reviews: 88,
+      image: "https://images.unsplash.com/photo-1571099491263-ef9b64709918?w=800",
+      location: "Dunfermline",
+      amenities: ["WiFi", "Breakfast", "Parking", "Bar"],
+      description: "Family-run inn steps from the abbey. Warm, no-fuss hospitality and hearty Scottish breakfasts.",
+      commission: "8%"
+    },
+    {
+      id: 3,
+      name: "St Andrews Links View Suites",
+      type: "luxury",
+      source: "booking",
+      price: 235,
+      rating: 4.9,
+      reviews: 201,
+      image: "https://images.unsplash.com/photo-1582719478250-c89cae4e8f58?w=800",
+      location: "St Andrews",
+      amenities: ["Golf Access", "Spa", "Restaurant", "Pool", "WiFi"],
+      description: "Overlooking the Old Course. Premium suites with floor-to-ceiling views and butler service.",
+      bookingUrl: "https://www.booking.com/searchresults.html?ss=St+Andrews+Fife&aid=YOUR_AFFILIATE_ID"
+    },
+    {
+      id: 4,
+      name: "Kirkcaldy Harbour B&B",
+      type: "affordable",
+      source: "direct",
+      price: 62,
+      rating: 4.3,
+      reviews: 54,
+      image: "https://images.unsplash.com/photo-1564501049412-61c2a3fc3389?w=800",
+      location: "Kirkcaldy",
+      amenities: ["WiFi", "Breakfast", "Sea View"],
+      description: "Charming B&B with harbour views. Home-cooked breakfast and a genuinely warm welcome.",
+      commission: "6%"
+    },
+    {
+      id: 5,
+      name: "East Neuk Coastal Lodge",
+      type: "luxury",
+      source: "direct",
+      price: 165,
+      rating: 4.7,
+      reviews: 39,
+      image: "https://images.unsplash.com/photo-1571050622995-8815b9729583?w=800",
+      location: "Anstruther",
+      amenities: ["Sea View", "Terrace", "Kitchen", "Parking", "WiFi"],
+      description: "Boutique lodge on the East Neuk coast. Perfect base for walking the Fife Coastal Path.",
+      commission: "10%"
+    },
+    {
+      id: 6,
+      name: "Leven Budget Stay",
+      type: "affordable",
+      source: "booking",
+      price: 58,
+      rating: 4.1,
+      reviews: 143,
+      image: "https://images.unsplash.com/photo-1564501049412-61c2a3fc3389?w=800",
+      location: "Leven",
+      amenities: ["WiFi", "Parking", "Breakfast"],
+      description: "Simple, clean and central. Great value for exploring the Fife Coastal Path towns.",
+      bookingUrl: "https://www.booking.com/searchresults.html?ss=Leven+Fife&aid=YOUR_AFFILIATE_ID"
+    }
+  ];
+
+  // ── GUESTS LOGIC ──
+  let guests = { adults: 2, children: 0, rooms: 1 };
+
+  function changeGuest(type, delta) {
+    const min = type === 'adults' ? 1 : 0;
+    guests[type] = Math.max(min, guests[type] + delta);
+    document.getElementById(type + 'Count').textContent = guests[type];
+    document.getElementById('adultsDown').disabled = guests.adults <= 1;
+    document.getElementById('childrenDown').disabled = guests.children <= 0;
+    document.getElementById('roomsDown').disabled = guests.rooms <= 1;
+    updateGuestsDisplay();
+  }
+
+  function updateGuestsDisplay() {
+    const parts = [];
+    parts.push(`${guests.adults} adult${guests.adults > 1 ? 's' : ''}`);
+    if (guests.children > 0) parts.push(`${guests.children} child${guests.children > 1 ? 'ren' : ''}`);
+    parts.push(`${guests.rooms} room${guests.rooms > 1 ? 's' : ''}`);
+    document.getElementById('guestsDisplay').textContent = parts.join(' · ');
+  }
+
+  function toggleGuestsPopup() {
+    document.getElementById('guestsPopup').classList.toggle('open');
+  }
+
+  document.addEventListener('click', (e) => {
+    if (!document.getElementById('guestsField').contains(e.target)) {
+      document.getElementById('guestsPopup').classList.remove('open');
+    }
+  });
+
+  // ── RENDER HOTELS ──
+  function renderHotels(list) {
+    const grid = document.getElementById('hotelsGrid');
+    if (!list.length) {
+      grid.innerHTML = '<p style="color:var(--stone);padding:40px 0;">No properties found for this filter.</p>';
+      return;
+    }
+
+    grid.innerHTML = list.map(h => {
+      const badgeClass = h.source === 'direct' ? 'direct' : h.type;
+      const badgeLabel = h.source === 'direct' ? 'Direct Deal' : (h.type === 'luxury' ? 'Luxury' : 'Affordable');
+
+      const bookBtn = h.source === 'booking'
+        ? `<a href="${h.bookingUrl}" target="_blank" class="hotel-book-btn">Book on Booking.com ↗</a>`
+        : `<button class="hotel-book-btn direct-btn" onclick="openModal(${h.id})">Enquire Direct →</button>`;
+
+      return `
+        <div class="hotel-card">
+          <div class="hotel-img-wrap">
+            <img src="${h.image}" alt="${h.name}" loading="lazy" />
+            <span class="hotel-badge ${badgeClass}">${badgeLabel}</span>
+            <div class="hotel-rating"><span class="star">★</span> ${h.rating} <span style="color:var(--stone);font-weight:400;">(${h.reviews})</span></div>
+          </div>
+          <div class="hotel-body">
+            <div class="hotel-location-tag">${h.location}</div>
+            <div class="hotel-name">${h.name}</div>
+            <div class="hotel-desc">${h.description}</div>
+            <div class="hotel-amenities">
+              ${h.amenities.map(a => `<span class="amenity">${a}</span>`).join('')}
+            </div>
+            <div class="hotel-footer">
+              <div>
+                <div class="hotel-price">£${h.price}</div>
+                <div class="hotel-price-night">per night</div>
+              </div>
+              ${bookBtn}
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  let currentFilter = 'all';
+  renderHotels(hotels);
+
+  function filterHotels(type, btn) {
+    currentFilter = type;
+    document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filtered = type === 'all' ? hotels
+      : type === 'direct' ? hotels.filter(h => h.source === 'direct')
+      : hotels.filter(h => h.type === type && h.source === 'booking');
+    renderHotels(filtered);
+  }
+
+  function filterByArea(area) {
+    document.querySelectorAll('.area-card').forEach(c => c.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+    const filtered = hotels.filter(h => h.location === area);
+    renderHotels(filtered);
+    document.getElementById('hotels').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // ── SEARCH ──
+  function handleSearch() {
+    const area = document.getElementById('areaSelect').value;
+    let filtered = area ? hotels.filter(h => h.location === area) : hotels;
+    renderHotels(filtered);
+    document.getElementById('hotels').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // ── DIRECT BOOKING MODAL ──
+  let currentHotelId = null;
+
+  function openModal(id) {
+    const hotel = hotels.find(h => h.id === id);
+    currentHotelId = id;
+    document.getElementById('modalHotelName').textContent = hotel.name;
+    document.getElementById('modalHotelSub').textContent = `${hotel.location} · £${hotel.price}/night · ${hotel.commission} service fee on confirmed stay`;
+    document.getElementById('modalForm').style.display = 'flex';
+    document.getElementById('modalSuccess').classList.remove('show');
+    document.getElementById('modalOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeModalOnOverlay(e) {
+    if (e.target === document.getElementById('modalOverlay')) closeModal();
+  }
+
+  async function submitDirectBooking() {
+    const name = document.getElementById('mName').value.trim();
+    const email = document.getElementById('mEmail').value.trim();
+    const checkIn = document.getElementById('mCheckIn').value;
+    const checkOut = document.getElementById('mCheckOut').value;
+
+    if (!name || !email || !checkIn || !checkOut) {
+      alert('Please fill in your name, email, and dates.');
+      return;
+    }
+
+    const hotel = hotels.find(h => h.id === currentHotelId);
+    const btn = document.querySelector('.modal-submit');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const data = {
+      hotel: hotel.name,
+      location: hotel.location,
+      name,
+      email,
+      checkIn,
+      checkOut,
+      adults: document.getElementById('mAdults').value,
+      children: document.getElementById('mChildren').value,
+      rooms: document.getElementById('mRooms').value,
+      message: document.getElementById('mMessage').value,
+      commission: hotel.commission
+    };
+
+    try {
+      // ── REPLACE WITH YOUR FORMSPREE ENDPOINT FOR FIFEHOTELS ──
+      const res = await fetch('https://formspree.io/f/YOUR_FIFE_FORM_ID', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (res.ok) {
+        document.getElementById('modalForm').style.display = 'none';
+        document.getElementById('modalSuccess').classList.add('show');
+      } else {
+        alert('Something went wrong. Please try again.');
+        btn.textContent = 'Send Enquiry →';
+        btn.disabled = false;
+      }
+    } catch {
+      alert('Connection error. Please try again.');
+      btn.textContent = 'Send Enquiry →';
+      btn.disabled = false;
+    }
+  }
+
+  // ── SCROLL ANIMATIONS ──
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ── SET TODAY AS MIN DATE ──
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('checkIn').min = today;
+  document.getElementById('checkOut').min = today;
+  document.getElementById('mCheckIn').min = today;
+  document.getElementById('mCheckOut').min = today;
+</script>
+
+</body>
+</html>
